@@ -11,11 +11,17 @@ function App() {
   const [ageValid, setAgeValid] = useState(true);
   const [message, setMessage] = useState("");
 
-  const formSubmitHandler = (isNameValid, isAgeValid, userInput) => {
+  const formSubmitHandler = (
+    isNameValid,
+    isAgeValid,
+    userInputName,
+    userInputAge
+  ) => {
     if (isNameValid && isAgeValid) {
       const data = {
         id: Math.random().toString(),
-        ...userInput,
+        userName: userInputName,
+        age: userInputAge,
       };
       setUsers((prevData) => {
         return [...prevData, data];
@@ -38,7 +44,7 @@ function App() {
     e.preventDefault();
     setNameValid(true);
     setAgeValid(true);
-  }
+  };
   return (
     <div className="App">
       <UserForm onFormSubmit={formSubmitHandler} />
