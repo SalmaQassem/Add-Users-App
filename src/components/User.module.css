@@ -1,0 +1,9 @@
+.user {
+    width: 100%;
+    padding: 4px 8px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+    text-transform: capitalize;
+}
